@@ -32,3 +32,15 @@ function area(radius) {
   let result = x * Math.pow(radius, 2);
   return result;
 }
+
+//Math.round() rounds a number to the nearest integer, Math.floor() rounds a number downwards to the nearest integer and Math.ceil() rounds a number upwards to the nearest integer.
+
+function round100(num1) {
+  return Math.round(num1 / 100) * 100;
+}
+
+//Math.random() returns a pseudo-random number between 0 (inclusive) and 1 (exclusive!!) | Write a function dice that returns like a dice a random number between 1 and 6.
+
+function dice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
