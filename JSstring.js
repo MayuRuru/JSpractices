@@ -1,7 +1,13 @@
-//Reduce() | Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+//parseInt() | To read a number from a string. Write a function add that takes a string with a summation task and returns its result as a number. Two natural numbers should be added.
 
-function aVeryBigSum(ar) {
-  return ar.reduce((a, b) => a + b);
+function add(string) {
+  let num1 = parseInt(string, 10);
+  let plus = string.indexOf("+");
+
+  let num2 = string.substr(plus + 1);
+
+  let num2s = parseInt(num2, 10);
+  return num2s + num1;
 }
 
 //String: replace() | Write a function normalize, that replaces '-' with '/' in a date string.
