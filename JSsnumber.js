@@ -44,3 +44,13 @@ function round100(num1) {
 function dice() {
   return Math.floor(Math.random() * 6) + 1;
 }
+
+//Write a function repdigit that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
+
+function repdigit(x){
+  let ones = x%10;
+  let tens = Math.floor(x/10);
+  if (ones === tens) {
+  return 'Repdigit!';}
+  return 'No Repdigit!';
+  }
