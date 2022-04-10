@@ -150,3 +150,14 @@ function max() {
     return x;
   }
 }
+
+//Write a function sum that takes an array of numbers and returns the sum of these numbers. Write a function mean that takes an array of numbers and returns the average of these numbers. The mean function should use the sum function.
+
+function sum(arr) {
+  let resultsum = arr.reduce((a, b) => a + b);
+  return resultsum;
+}
+
+function mean(arr) {
+  return sum(arr) / arr.length;
+}

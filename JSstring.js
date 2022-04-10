@@ -74,3 +74,11 @@ function firstWord(string) {
   result = string.substr(0, untilHere);
   return result;
 }
+
+//String: split() | Write a function add that takes a string with a summation task and returns its result as a number
+
+function add(string) {
+  let numbers = string.split("+").reduce((acc, n) => acc + parseInt(n, 10), 0);
+
+  return numbers;
+}
