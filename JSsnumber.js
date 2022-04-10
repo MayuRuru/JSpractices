@@ -47,10 +47,37 @@ function dice() {
 
 //Write a function repdigit that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
 
-function repdigit(x){
-  let ones = x%10;
-  let tens = Math.floor(x/10);
+function repdigit(x) {
+  let ones = x % 10;
+  let tens = Math.floor(x / 10);
   if (ones === tens) {
-  return 'Repdigit!';}
-  return 'No Repdigit!';
+    return "Repdigit!";
   }
+  return "No Repdigit!";
+}
+
+/* 
+If you want to test for NaN, you unfortunately can't use strict equality. NaN is the only value in JavaScript that when compared to itself returns false. That is, NaN === NaN results in false. To check if a value is NaN use the Number.isNaN function:
+
+let input = 'Babylon';
+let message;
+let age = parseInt(input);
+if ( Number.isNaN(age) ) {
+  message = 'Input is not a number!';
+}
+
+Write a function parseFirstInt that takes a string and returns the first integer present in the string. If the string does not contain an integer, you should get NaN.
+ */
+
+function parseFirstInt(string) {
+  let input = string;
+
+  for (let i = 0; i < string.length; i++) {
+    let x = parseInt(input);
+    if (!Number.isNaN(x)) {
+      return x;
+    }
+    input = input.substr(1);
+  }
+  return NaN;
+}

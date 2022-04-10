@@ -1,3 +1,12 @@
+// undefined | Write a function hello having one parameter and returning 'Hello <parameter>!'. If hello is called without an argument, 'Hello world!' should be returned.
+
+function hello(str) {
+  if (str === undefined) {
+    return "Hello world!";
+  }
+  return "Hello " + str + "!";
+}
+
 //parseInt() | To read a number from a string. Write a function add that takes a string with a summation task and returns its result as a number. Two natural numbers should be added.
 
 function add(string) {

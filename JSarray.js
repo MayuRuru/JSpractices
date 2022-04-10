@@ -126,6 +126,27 @@ function concatUp(a1, a2) {
   return a2.concat(a1);
 }
 
-// Array.join() |
+// Array.join() | Write a function list that takes an array of words and returns a string by concatenating the words in the array, separated by commas and - the last word - by an 'and'. An empty array should return an empty string.
 
 // Array.slice() | With slice you can copy a subarray from an array. The first parameter specifies the start index (included) and the second parameter specifies the end index (excluded).
+
+//2dimencional arrays | Arrays that contain arrays are also called two-dimensional arrays.
+//Write a function flat that flattens a two-dimensional array with 3 entries.
+
+function flat(arr) {
+  let arr1 = arr[0];
+  let arr2 = arr[1];
+  let arr3 = arr[2];
+  let flatarr = arr1.concat(arr2);
+  let lastarr = flatarr.concat(arr3);
+  return lastarr;
+}
+
+//Write a function max that calculates the maximum of an arbitrary number of numbers.
+
+function max() {
+  let x = Math.max(...arguments);
+  for (let i = 0; i < arguments.length; i++) {
+    return x;
+  }
+}
