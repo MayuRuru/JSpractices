@@ -6,6 +6,7 @@ function aVeryBigSum(ar) {
 
 // Math.sqrt(x) returns the square root
 // Math.pow(x, y) calculates x to the power of y
+
 // Write a function hypotenuse that calculates the length of the hypotenuse of a right triangle. The length of the two legs is passed to the function.
 
 function hypotenuse(leg1, leg2) {
@@ -80,4 +81,12 @@ function parseFirstInt(string) {
     input = input.substr(1);
   }
   return NaN;
+}
+
+//FIND THE MEDIAN
+
+function findMedian(arr) {
+  const mid = Math.floor(arr.length / 2),
+    nums = [...arr].sort((a, b) => a - b);
+  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 }
