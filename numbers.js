@@ -4,10 +4,29 @@ function aVeryBigSum(ar) {
   return ar.reduce((a, b) => a + b);
 }
 
+//
+
+
+function basicOp(operation, value1, value2) {
+  switch (operation) {
+      case '+':
+          return value1 + value2;
+      case '-':
+          return value1 - value2;
+      case '*':
+          return value1 * value2;
+      case '/':
+          return value1 / value2;
+      default:
+          return 0;
+  }
+}
+
+
 // Math.sqrt(x) returns the square root
 // Math.pow(x, y) calculates x to the power of y
 
-// Write a function hypotenuse that calculates the length of the hypotenuse of a right triangle. The length of the two legs is passed to the function.
+// hypotenuse | calculate the length of the hypotenuse of a right triangle. The length of the two legs is passed to the function.
 
 function hypotenuse(leg1, leg2) {
   let x = Math.pow(leg1, 2);
@@ -16,7 +35,7 @@ function hypotenuse(leg1, leg2) {
   return Math.sqrt(z);
 }
 
-// Math.min() and Math.max() | Write a function midrange, that calculates the midrange of 3 numbers. The midrange is the mean of the smallest and largest number.
+// Math.min() and Math.max() | Write a function that calculates the midrange of 3 numbers. The midrange is the mean of the smallest and largest number.
 
 function midrange(x, y, z) {
   let min = Math.min(x, y, z);
@@ -57,6 +76,48 @@ function repdigit(x) {
   return "No Repdigit!";
 }
 
+//FIND THE MEDIAN
+
+function findMedian(arr) {
+  const mid = Math.floor(arr.length / 2),
+    nums = [...arr].sort((a, b) => a - b);
+  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+}
+
+// prime | Write a function that checks whether a passed number is prime. In case of a prime number it should return true, otherwise false.
+
+function isPrime(n) {
+  if (num < 2) return false;
+  const limit = Math.sqrt(num);
+  for (let i = 2; i <= limit; ++i) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// other solution:
+
+let i = 1;
+
+while (i++ < num - 1) {
+  if (num % i === 0) {
+    return false;
+  }
+}
+
+return num > 1;
+
+// Max | Write a function max that calculates the maximum of an arbitrary number of numbers.
+
+function max() {
+  let x = Math.max(...arguments);
+  for (let i = 0; i < arguments.length; i++) {
+    return x;
+  }
+}
+
 /* 
 If you want to test for NaN, you unfortunately can't use strict equality. NaN is the only value in JavaScript that when compared to itself returns false. That is, NaN === NaN results in false. To check if a value is NaN use the Number.isNaN function:
 
@@ -81,12 +142,4 @@ function parseFirstInt(string) {
     input = input.substr(1);
   }
   return NaN;
-}
-
-//FIND THE MEDIAN
-
-function findMedian(arr) {
-  const mid = Math.floor(arr.length / 2),
-    nums = [...arr].sort((a, b) => a - b);
-  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 }

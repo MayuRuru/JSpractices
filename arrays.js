@@ -1,3 +1,9 @@
+//rotate to the left elements by d positions
+
+function rotateLeft(d, arr) {
+  return [...arr.slice(d, arr.length), ...arr.slice(0, d)];
+}
+
 // Array.shift() | The array method shift removes the first element from an array and returns that element. The length of the array is reduced by 1.
 
 // Array.push() | The method push adds a new element to an array. The new element is passed as a parameter and is added to the end of the array.
@@ -7,6 +13,14 @@
 function rotate(arr) {
   let x = arr.shift();
   arr.push(x);
+  return arr;
+}
+
+function rotateLeft(d, arr) {
+  for (let i = 0; i < d; i++) {
+    arr.push(arr.shift());
+  }
+
   return arr;
 }
 
@@ -97,15 +111,6 @@ function concatUp(a1, a2) {
 
 /////////
 
-// Max | Write a function max that calculates the maximum of an arbitrary number of numbers.
-
-function max() {
-  let x = Math.max(...arguments);
-  for (let i = 0; i < arguments.length; i++) {
-    return x;
-  }
-}
-
 // Reduce | Write a function sum that takes an array of numbers and returns the sum of these numbers.
 // Write a function mean that takes an array of numbers and returns the average of these numbers. The mean function should use the sum function.
 
@@ -118,8 +123,6 @@ function mean(arr) {
   return sum(arr) / arr.length;
 }
 
-// Reduce() | Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+// SPARSE ARRAY | A sparse array is an array of data in which many elements have a value of zero (ex. array of separate words/strings). Normally, the length property of an array specifies the number of elements in the array. If the array is sparse, the value of the length property is greater than the number of elements.
 
-function aVeryBigSum(ar) {
-  return ar.reduce((a, b) => a + b);
-}
+// There is a collection of N strings ( There can be multiple occurences of a particular string ). Each string’s length is no more than 20 characters. There are also Q queries. For each query, you are given a string, and you need to find out how many times this string occurs in the given collection of Q strings.

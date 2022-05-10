@@ -1,3 +1,36 @@
+// index of vowels:
+
+function vowelIndices(word) {
+  let vowels = ["a", "e", "i", "o", "u", "y"];
+  let result = [];
+
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.indexOf(word[i].toLowerCase()) > -1) {
+      result.push(i + 1);
+    }
+  }
+
+  return result;
+}
+
+// repeat a string
+
+function repeatStr(n, s) {
+  let result = "";
+
+  for (let i = 0; i < n; i++) {
+    result = result + s;
+  }
+
+  return result;
+}
+
+// another:
+
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+
 // undefined | Write a function hello having one parameter and returning 'Hello <parameter>!'. If hello is called without an argument, 'Hello world!' should be returned.
 
 function hello(str) {
@@ -90,4 +123,61 @@ function reverse(string) {
   let reversestring = newstring.reverse();
   let result = reversestring.join("");
   return result;
+}
+
+// delete all spaces in string with Regex:
+
+function noSpace(x) {
+  return x.replace(/\s/g, "");
+}
+
+//
+function likes(names) {
+  if (names.length == 0) {
+    return "no one likes this";
+  } else if (names.length == 1) {
+    return names[0] + " likes this";
+  } else if (names.length == 2) {
+    return names[0] + " and " + names[1] + " like this";
+  } else if (names.length == 3) {
+    return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+  } else {
+    return (
+      names[0] +
+      ", " +
+      names[1] +
+      " and " +
+      (names.length - 2) +
+      " others like this"
+    );
+  }
+}
+
+//another:
+
+function likes(names) {
+  names = names || [];
+  switch (names.length) {
+    case 0:
+      return "no one likes this";
+      break;
+    case 1:
+      return names[0] + " likes this";
+      break;
+    case 2:
+      return names[0] + " and " + names[1] + " like this";
+      break;
+    case 3:
+      return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+      break;
+    default:
+      return (
+        names[0] +
+        ", " +
+        names[1] +
+        " and " +
+        (names.length - 2) +
+        " others like this"
+      );
+  }
 }

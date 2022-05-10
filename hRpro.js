@@ -26,7 +26,7 @@ function countingSort(arr) {
 
 /////
 
-// Flip the matrix | In a matrix 2nx2n where each cell contains an integer, reverse any of its rows or columns to maximize the sum of the elements in the n x n submatrix located in the upper-left quadrant / return the maximum sum of the elements in the upper-left quadrant of a square matrix
+// Flip the matrix
 
 function flippingMatrix(matrix) {
   let x = matrix.length / 2;
@@ -48,9 +48,7 @@ function flippingMatrix(matrix) {
   return total;
 }
 
-////
-
-// Caesar Chiper | In the Caesar Cipher problem we are given a string and a number of positions to shift. Our task is to shift each letter in the string that number of positions.
+// CAESE CHYPHER
 
 function caesarCipher(s, k) {
   s = s.split("");
@@ -69,4 +67,118 @@ function caesarCipher(s, k) {
     }
   }
   return s.join("");
+}
+
+// TOWER BREAKERS
+
+function towerBreakers(n, m) {
+  //player 2 wins in the following cases:
+
+  if (m == 1) return 2; //if the towers start out at 1
+  if (n % 2 == 0) return 2;
+  //or there are an even number of towers
+  else return 1;
+}
+
+// GRID CHALLENGE
+
+function gridChallenge(grid) {
+  let matrix = [];
+  let isSorted = true;
+
+  grid.forEach((row, i) => {
+    matrix[i] = row.split("").sort((a, b) => a.localeCompare(b));
+  });
+
+  for (let i = 0; i < matrix[0].length; ++i) {
+    let tmpArr = [];
+
+    for (let j = 0; j < matrix.length; ++j) {
+      tmpArr.push(matrix[j][i]);
+    }
+
+    for (let k = 0; k < tmpArr.length; ++k) {
+      if (tmpArr[k] > tmpArr[k + 1]) {
+        isSorted = false;
+        break;
+      }
+    }
+  }
+  return isSorted ? "YES" : "NO";
+}
+
+// NEW YEAR CHAOS
+// Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic.
+
+function minimumBribes(q) {
+  let bribes = 0;
+  let chaotic = false;
+
+  for (let i = q.length - 1; i >= 0; i--) {
+    //Outer loop will start from the last element
+    if (q[i] - i > 3) chaotic = true;
+
+    for (let j = q[i] - 2; j < i; j++) {
+      //Inner loop (only two steps forward) will compare our current element with elements that are in front of it
+      if (q[j] > q[i]) bribes++;
+      //compare positions and for every number bigger that finds increases the bribe
+      //iteration will start one position in front of the current element’s original position and end one position before current element’s position.
+    }
+  }
+  if (chaotic) console.log("Too chaotic");
+  else console.log(bribes);
+}
+
+// PALINDROME INDEX
+// receives one string
+// returns letter index if removed
+// or -1 if its already a palindrome
+
+function palindrome(s) {
+  let result = -1;
+
+  if (s !== s.split("").reverse().join("")) {
+    for (let i = 0; i < s.length; i++) {
+      //create new string with the character at index i remove:
+      let newString = s.substring(0, i) + s.substring(i + 1);
+
+      //create its reverse:
+      let reverseString = newString.split("").reverse().join("");
+
+      //compare:
+      if (newString === reverseString) {
+        result = 1;
+        break;
+      }
+    }
+  }
+
+  return result;
+}
+
+///The function must return an array of integers representing the frequency of occurrence of each query string in strings.
+
+function matchingStrings(strings, queries) {
+  let occurs = []; //storing object
+  let result = Array(queries.length); //result will be an array of the same size of
+
+  strings.forEach((string) => {
+    //iterate over every item in strings array
+    if (occurs[string]) {
+      occurs[string]++; //increment its repetition in the occurs object
+    } else {
+      occurs[string] = 1;
+    }
+  });
+
+  queries.forEach((q, index) => {
+    //iterate over the queries array
+    if (occurs[q]) {
+      //check their values in the occurs object
+      result[index] = occurs[q]; //add number of repetitions to result
+    } else {
+      result[index] = 0; //query not added to result
+    }
+  });
+  return result;
 }

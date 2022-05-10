@@ -9,7 +9,7 @@ function addTo(x) {
   return sum;
 }
 
-// factorial | The factorial of a positive integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 3! = 1*2*3 = 6. By definition, 0! = 1. Write a function factorial that calculates the factorial of a positive integer.
+// The factorial of a positive integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 3! = 1*2*3 = 6. By definition, 0! = 1. Write a function factorial that calculates the factorial of a positive integer.
 
 function factorial(n) {
   let sum = 1;
@@ -19,7 +19,7 @@ function factorial(n) {
   return sum;
 }
 
-// mean | Write a functionthat accepts an array filled with numbers and returns the arithmetic mean of those numbers.
+// mean | Write a function that accepts an array filled with numbers and returns the arithmetic mean of those numbers.
 
 function mean(arr) {
   let sum = 0;
@@ -32,7 +32,7 @@ function mean(arr) {
   return result;
 }
 
-// WHILE | Write a function spaces that takes a natural number n and returns a string of n spaces.
+// WHILE | Write a function that takes a natural number n and returns a string of n spaces.
 
 function spaces(n) {
   let result = "";
@@ -70,17 +70,35 @@ function gcd(a, b) {
   return gcd(a, b - a);
 }
 
-// prime | Write a function that checks whether a passed number is prime. In case of a prime number it should return true, otherwise false.
+// SWITCH
 
-function isPrime(n) {
-  if (n % 1 || n < 2) return false; // check if the passed value is an even number or not.
-
-  if (n % 2 == 0) return n == 2;
-
-  var m = Math.sqrt(n); // check odd divisors only, from 3 up to square root of the passed value.
-
-  for (var i = 3; i <= m; i += 2) {
-    if (n % i == 0) return false;
+function basicOp(operation, value1, value2) {
+  switch (operation) {
+    case "+":
+      return value1 + value2;
+    case "-":
+      return value1 - value2;
+    case "*":
+      return value1 * value2;
+    case "/":
+      return value1 / value2;
+    default:
+      return 0;
   }
-  return true;
+}
+
+//FIZZBUZZ:
+
+function fizzify(i) {
+  if (i % 15 == 0) return "FizzBuzz";
+  else if (i % 5 == 0) return "Buzz";
+  else if (i % 3 == 0) return "Fizz";
+  else return i;
+}
+
+// Return an array
+function fizzbuzz(n) {
+  var res = [];
+  for (var i = 1; i <= n; ++i) res.push(fizzify(i));
+  return res;
 }
