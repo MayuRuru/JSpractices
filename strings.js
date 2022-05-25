@@ -1,4 +1,4 @@
-// index of vowels:
+// index of vowels
 
 function vowelIndices(word) {
   let vowels = ["a", "e", "i", "o", "u", "y"];
@@ -6,10 +6,9 @@ function vowelIndices(word) {
 
   for (let i = 0; i < word.length; i++) {
     if (vowels.indexOf(word[i].toLowerCase()) > -1) {
-      result.push(i + 1);
+      result.push(i + 1); // indice empieza en 1
     }
   }
-
   return result;
 }
 
@@ -25,13 +24,13 @@ function repeatStr(n, s) {
   return result;
 }
 
-// another:
+// another with repeat():
 
 function repeatStr(n, s) {
   return s.repeat(n);
 }
 
-// undefined | Write a function hello having one parameter and returning 'Hello <parameter>!'. If hello is called without an argument, 'Hello world!' should be returned.
+// undefined | Write a function having one parameter and returning 'Hello <parameter>!'. If hello is called without an argument, 'Hello world!' should be returned.
 
 function hello(str) {
   if (str === undefined) {
@@ -55,7 +54,7 @@ function toCase(string) {
   return result1 + "-" + result2;
 }
 
-// charAt() | Write a function that takes two strings and returns the initial letters of theses strings.
+// Write a function that takes two strings and returns the initial letters of theses strings.
 
 function shortcut(string1, string2) {
   result1 = string1[0];
@@ -63,7 +62,7 @@ function shortcut(string1, string2) {
   return result1 + result2;
 }
 
-// trim() | Write a function which returns the first character that is not a space when a string is passed.
+// trim() + charAt() | Write a function which returns the first character that is not a space when a string is passed.
 
 function firstChar(string) {
   let result = string.trim();
@@ -104,7 +103,7 @@ function add(string) {
   return numbers;
 }
 
-// parseInt() | To read a number from a string. Write a functionthat takes a string with a summation task and returns its result as a number. Two natural numbers should be added.
+// parseInt() | To read a number from a string. Write a function that takes a string with a summation task and returns its result as a number. Two natural numbers should be added.
 
 function add(string) {
   let num1 = parseInt(string, 10);
@@ -131,7 +130,8 @@ function noSpace(x) {
   return x.replace(/\s/g, "");
 }
 
-//
+// Likes:
+
 function likes(names) {
   if (names.length == 0) {
     return "no one likes this";
@@ -153,7 +153,7 @@ function likes(names) {
   }
 }
 
-//another:
+// another using Switch:
 
 function likes(names) {
   names = names || [];
@@ -179,5 +179,41 @@ function likes(names) {
         (names.length - 2) +
         " others like this"
       );
+  }
+}
+
+// Pangrams:
+
+function pangrams(s) {
+  let string = s.toLowerCase().replace(/\s+/g, "");
+
+  let check = new Set(string);
+
+  if (check.size === 26) {
+    return "pangram";
+  }
+
+  return "not pangram";
+}
+
+// Substring:
+
+function hackerrankInString(s) {
+  let hacker = "hackerrank";
+  let substring = hacker.split("");
+  let string = s.split("");
+
+  let j = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === substring[j]) {
+      j++;
+    }
+  }
+
+  if (j == substring.length) {
+    return "YES";
+  } else {
+    return "NO";
   }
 }

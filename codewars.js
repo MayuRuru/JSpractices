@@ -18,14 +18,7 @@ function replicate(times, number) {
   return recursive(array, times, number);
 }
 
-// Array.from:
-
-const replicate = (times, number) =>
-  Array.from({ length: times }, (_) => number);
-
-// MIDDLE CHARACTER | Don't give me five!
-
-// In this kata you get the start number and the end number of a region and should return the count of all numbers except numbers with a 5 in it. The start and the end number are both inclusive!
+// DONT GIVE ME 5 | you get the start number and the end number of a region and should return the count of all numbers except numbers with a 5 in it. The start and the end number are both inclusive!
 
 function dontGiveMeFive(start, end) {
   let count = 0;
@@ -57,7 +50,7 @@ const getMiddle = (s) => {
   return result;
 };
 
-// REMOVE THE MINIMUN:  Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+// REMOVE THE MINIMUN |  Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
 
 function removeSmallest(numbers) {
   let empty = [];
@@ -75,6 +68,7 @@ function removeSmallest(numbers) {
 
   return result;
 }
+
 // JADEN CASING STRINGS:
 
 String.prototype.toJadenCase = function () {
@@ -86,7 +80,7 @@ String.prototype.toJadenCase = function () {
     .join(" ");
 };
 
-////
+// better:
 
 let newStr = str.split(" ");
 
@@ -95,7 +89,7 @@ console.log(word);
 
 return newStr.join(" ");
 
-/// BINGO OR NOT:
+/// Every | BINGO OR NOT:
 
 function bingo(a) {
   let win = [2, 9, 14, 7, 15];
@@ -115,7 +109,7 @@ function bingo(a) {
 const bingo = (arr) =>
   [2, 9, 14, 7, 15].every((value) => arr.includes(value)) ? "WIN" : "LOSE";
 
-//Complete the function that takes a list of words, and returns the length of the longest word in the list.
+// Complete the function that takes a list of words, and returns the length of the longest word in the list.
 
 function longest(words) {
   let result = 0;
@@ -172,18 +166,4 @@ const phrases = [
 
 function howMuchILoveYou(n) {
   return phrases[(n - 1) % phrases.length];
-}
-
-//another:
-
-function howMuchILoveYou(nbPetals) {
-  let petals = [
-    "I love you",
-    "a little",
-    "a lot",
-    "passionately",
-    "madly",
-    "not at all",
-  ];
-  return petals[(nbPetals - 1) % 6];
 }

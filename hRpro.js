@@ -1,37 +1,11 @@
-// counting sort | Given a list of integers, count and return the number of times each value appears as an array of integers.
-/*
-countingSort has the following parameter(s):
-
-    arr[n]: an array of integers
-
-Returns
-
-    int[100]: a frequency array with the values at each index associated with the frequency the value occurred in the original array
-
-*/
-
-function countingSort(arr) {
-  //create a new array with the same amount of indices as the array being passed into the function:
-  let arrSort = new Array(100).fill(0);
-  //“fill” must be included otherwise the values at each of the indices remain undefined, and the array would remain empty.
-
-  for (let num of arr) {
-    arrSort[num]++;
-  }
-
-  // iterate over the original array that the function is accepting and increment the number at the associated index of by 1
-
-  return arrSort;
-}
-
-/////
-
 // Flip the matrix
 
 function flippingMatrix(matrix) {
-  let x = matrix.length / 2;
-  let max = 0;
-  let total = 0;
+  let x = matrix.length / 2; //find dimensions of the top left submatrix
+
+  let max = 0; //check maximum possible for each element of the submatrix
+
+  let total = 0; //result
 
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < x; j++) {
@@ -108,7 +82,6 @@ function gridChallenge(grid) {
 }
 
 // NEW YEAR CHAOS
-// Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic.
 
 function minimumBribes(q) {
   let bribes = 0;
@@ -130,16 +103,13 @@ function minimumBribes(q) {
 }
 
 // PALINDROME INDEX
-// receives one string
-// returns letter index if removed
-// or -1 if its already a palindrome
 
 function palindrome(s) {
   let result = -1;
 
   if (s !== s.split("").reverse().join("")) {
     for (let i = 0; i < s.length; i++) {
-      //create new string with the character at index i remove:
+      //create new string with the character at index i
       let newString = s.substring(0, i) + s.substring(i + 1);
 
       //create its reverse:
@@ -147,7 +117,7 @@ function palindrome(s) {
 
       //compare:
       if (newString === reverseString) {
-        result = 1;
+        result = i;
         break;
       }
     }
@@ -156,7 +126,18 @@ function palindrome(s) {
   return result;
 }
 
-///The function must return an array of integers representing the frequency of occurrence of each query string in strings.
+/// Return an array of integers representing the frequency of occurrence of each query string in strings.
+
+function matchingStrings(strings, queries) {
+  let result = [];
+
+  for (let i = 0; i < queries.length; i++) {
+    result[i] = strings.filter((element) => element == queries[i]).length;
+  }
+  return result;
+}
+
+// say what:
 
 function matchingStrings(strings, queries) {
   let occurs = []; //storing object
@@ -182,3 +163,107 @@ function matchingStrings(strings, queries) {
   });
   return result;
 }
+
+///
+
+function kangaroo(x1, v1, x2, v2) {
+  if (v1 > v2) {
+    while (x1 < x2) {
+      x1 += v1;
+      x2 += v2;
+    }
+  }
+  if (x1 == x2) {
+    return "YES";
+  } else return "NO";
+
+  // let kangaroo1 = x1;
+  // let kangaroo2 = x2;
+
+  // if(x2>=x1 && v2>=v1){
+  //     return "NO";
+  // }
+
+  // for (let i=1; i<100; i++){
+  //     kangaroo1 += v1;
+  //     kangaroo2 += v2;
+
+  //     if (kangaroo1 === kangaroo2){
+  //         return "YES";
+  //     }
+  //     return "NO";
+  // }
+}
+
+// cats and mouse
+
+function catAndMouse(x, y, z) {
+  let cata = Math.abs(z - x);
+  let catb = Math.abs(z - y);
+
+  if (cata > catb) {
+    return "Cat B";
+  } else if (cata > catb) {
+    return "Cat A";
+  } else if (cata == catb) {
+    //1 3 2 // 1     -1
+    return "Mouse C";
+  }
+}
+
+// EVERY
+// INCLUDES
+// array of strings check if character is repeated in all of strings
+
+function gemstones(arr) {
+  let gemstones = 0;
+  let newarr = [...new Set(...arr)];
+
+  for (let i of newarr) {
+    if (arr.every((letter) => letter.includes(i))) {
+      gemstones++;
+    }
+  }
+  return gemstones;
+}
+
+//
+
+function beautifulBinaryString(b) {
+  let pattern = /010/g;
+  let matches = b.match(pattern);
+
+  if (matches !== null) {
+    return matches.length;
+  } else {
+    return 0;
+  }
+}
+
+// counting sort | Given a list of integers, count and return the number of times each value appears as an array of integers.
+/*
+countingSort has the following parameter(s):
+
+    arr[n]: an array of integers
+
+Returns
+
+    int[100]: a frequency array with the values at each index associated with the frequency the value occurred in the original array
+
+*/
+
+function countingSort(arr) {
+  //create a new array with the same amount of indices as the array being passed into the function:
+  let arrSort = new Array(100).fill(0);
+  //“fill” must be included otherwise the values at each of the indices remain undefined, and the array would remain empty.
+
+  for (let num of arr) {
+    arrSort[num]++;
+  }
+
+  // iterate over the original array that the function is accepting and increment the number at the associated index of by 1
+
+  return arrSort;
+}
+
+/////

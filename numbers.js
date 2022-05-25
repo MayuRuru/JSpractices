@@ -5,24 +5,6 @@ function aVeryBigSum(ar) {
 }
 
 //
-
-
-function basicOp(operation, value1, value2) {
-  switch (operation) {
-      case '+':
-          return value1 + value2;
-      case '-':
-          return value1 - value2;
-      case '*':
-          return value1 * value2;
-      case '/':
-          return value1 / value2;
-      default:
-          return 0;
-  }
-}
-
-
 // Math.sqrt(x) returns the square root
 // Math.pow(x, y) calculates x to the power of y
 
@@ -65,7 +47,7 @@ function dice() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-//Write a function repdigit that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
+//Write a function that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
 
 function repdigit(x) {
   let ones = x % 10;

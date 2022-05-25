@@ -1,6 +1,6 @@
 // 2D arrays | Arrays that contain arrays are also called two-dimensional arrays.
 
-//Write a function that flattens a two-dimensional array with 3 entries.
+// Flattee a two-dimensional array with 3 entries.
 
 function flat(arr) {
   let arr1 = arr[0];
@@ -11,7 +11,7 @@ function flat(arr) {
   return lastarr;
 }
 
-// 2D | Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+// Calculate the absolute difference between the sums of its diagonals.
 
 function diagonalDifference(arr) {
   let sum1 = 0;
@@ -29,7 +29,7 @@ function diagonalDifference(arr) {
   return Math.abs(sum2 - sum1);
 }
 
-// Write a function sum that calculates the sum of all elements of a two-dimensional array.
+// Calculates the sum of all elements of a two-dimensional array.
 
 function sum(arr) {
   let sum = 0;
@@ -42,7 +42,7 @@ function sum(arr) {
   return sum;
 }
 
-//Write a function or functions that returns the largest summed number of all the hourglass patterns found in (ar)
+// Return the largest summed number of all the hourglass patterns*
 
 function hourglassSum(arr) {
   let hourglasses = [];
