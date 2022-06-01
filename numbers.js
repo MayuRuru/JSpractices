@@ -1,10 +1,3 @@
-//Reduce() | Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
-
-function aVeryBigSum(ar) {
-  return ar.reduce((a, b) => a + b);
-}
-
-//
 // Math.sqrt(x) returns the square root
 // Math.pow(x, y) calculates x to the power of y
 
@@ -26,8 +19,8 @@ function midrange(x, y, z) {
   return result;
 }
 
-//Math.PI gives π (roughly 3.14) and Math.E gives Euler's number e (roughly 2.71)
-//Write a function area that calculates the area of a circle. The function is given the radius of the circle.
+// Math.PI gives π (roughly 3.14) and Math.E gives Euler's number e (roughly 2.71)
+// Write a function area that calculates the area of a circle. The function is given the radius of the circle.
 
 function area(radius) {
   let x = Math.PI;
@@ -47,7 +40,7 @@ function dice() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-//Write a function that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
+// Write a function that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No Repdigit!'.
 
 function repdigit(x) {
   let ones = x % 10;
@@ -124,4 +117,20 @@ function parseFirstInt(string) {
     input = input.substr(1);
   }
   return NaN;
+}
+
+// FIND DIGITS | Count the number of divisors occurring within n:
+
+function findDigits(n) {
+  console.log(n);
+  let count = 0;
+  let num = n.toString();
+
+  for (let i = 0; i < num.length; i++) {
+    console.log(i);
+    if (n % num[i] === 0) {
+      count++;
+    }
+  }
+  return count;
 }

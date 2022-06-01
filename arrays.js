@@ -135,7 +135,7 @@ function aVeryBigSum(ar) {
   return ar.reduce((a, b) => a + b);
 }
 
-// Returns the average of the numbers of an array.
+// Return the average of the numbers of an array.
 
 function mean(arr) {
   return sum(arr) / arr.length;
@@ -145,3 +145,19 @@ function mean(arr) {
 
 const replicate = (times, number) =>
   Array.from({ length: times }, (_) => number);
+
+// Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+
+function divisibleSumPairs(n, k, ar) {
+  let pairs = 0;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      let sum = ar[i] + ar[j];
+      if (sum % k == 0) {
+        pairs++;
+      }
+    }
+  }
+  return pairs;
+}

@@ -266,4 +266,38 @@ function countingSort(arr) {
   return arrSort;
 }
 
-/////
+// Breaking the records:
+
+function breakingRecords(scores) {
+  let min = scores[0];
+  let max = scores[0];
+  let most = 0;
+  let least = 0;
+
+  for (let i = 1; i < scores.length; i++) {
+    //console.log(scores[i]);
+    if (scores[i] < min) {
+      min = scores[i];
+      least++;
+    }
+    if (scores[i] > max) {
+      max = scores[i];
+      most++;
+    }
+  }
+
+  return [most, least];
+}
+
+//Super reduced string:
+
+function superReducedString(s) {
+  let string = s.split("");
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i + 1]) {
+      string.splice(i, 2);
+      i = -1;
+    }
+  }
+  return string.length === 0 ? "Empty String" : string.join("");
+}
